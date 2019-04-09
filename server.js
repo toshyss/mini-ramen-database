@@ -3,24 +3,33 @@ const path = require("path");
 const graphqlHTTP = require("express-graphql");
 const { buildSchema } = require("graphql");
 
-const data = ("./ramen.json");
+const data = ("./data/ramen.json");
 
 const schema = buildSchema(`
 
-    type ramen {
+    type Ramen {
         menu: String
         picture: String
         shop: String
         address: String
-        price: Int
+        price: String
         taste: String
         men-type: String
         evaluation: Int
         topping: String
         memo: String
     }
+
+    type Query {
+        RamenAll: [Ramen]
+    }
 `);
 
+const root = {
+    RamenAll: () => {
+        return data.ramen;
+    }
+}
 
 const app = express();
 

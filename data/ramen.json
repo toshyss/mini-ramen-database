@@ -1,26 +1,28 @@
-[
-    {
-        "menu": "Gekikara-Tantanmen",
-        "picture": "0001.jpg",
-        "shop": "Ramen-Dammy",
-        "address": "Ookayama",
-        "price": "900",
-        "taste": "Goma",
-        "men-type": "Hoso-Men",
-        "evaluation": 5,
-        "topping": "Egg, Sesami-Paste",
-        "memo": "Totemo Umai Desu."
-    },
-    {
-        "menu": "Tyukara-Tantanmen",
-        "picture": "0002.jpg",
-        "shop": "Ramen-Dammy",
-        "address": "Ookayama",
-        "price": "800",
-        "taste": "Goma",
-        "men-type": "Hoso-Men",
-        "evaluation": 5,
-        "topping": "Egg, Sesami-Paste",
-        "memo": "Totemo Suki Desu."
-    }
-]
+{
+    "ramen": [
+        {
+            "menu": "Gekikara-Tantanmen",
+            "picture": "0001.jpg",
+            "shop": "Ramen-Dammy",
+            "address": "Ookayama",
+            "price": "900",
+            "taste": "Goma",
+            "men-type": "Hoso-Men",
+            "evaluation": 5,
+            "topping": "Egg, Sesami-Paste",
+            "memo": "Totemo Umai Desu."
+        },
+        {
+            "menu": "Tyukara-Tantanmen",
+            "picture": "0002.jpg",
+            "shop": "Ramen-Dammy",
+            "address": "Ookayama",
+            "price": "800",
+            "taste": "Goma",
+            "men-type": "Hoso-Men",
+            "evaluation": 5,
+            "topping": "Egg, Sesami-Paste",
+            "memo": "Totemo Suki Desu."
+        }
+    ]
+}
