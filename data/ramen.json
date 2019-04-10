@@ -7,7 +7,7 @@
             "address": "Ookayama",
             "price": "900",
             "taste": "Goma",
-            "men-type": "Hoso-Men",
+            "men_type": "Hoso-Men",
             "evaluation": 5,
             "topping": "Egg, Sesami-Paste",
             "memo": "Totemo Umai Desu."
@@ -19,7 +19,7 @@
             "address": "Ookayama",
             "price": "800",
             "taste": "Goma",
-            "men-type": "Hoso-Men",
+            "men_type": "Hoso-Men",
             "evaluation": 5,
             "topping": "Egg, Sesami-Paste",
             "memo": "Totemo Suki Desu."

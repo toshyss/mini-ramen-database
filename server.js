@@ -3,8 +3,8 @@ const path = require("path");
 const graphqlHTTP = require("express-graphql");
 const { buildSchema } = require("graphql");
 
-const data = require("./data/ramen.json");
-
+const data = require("./data");
+console.log(data);
 const schema = buildSchema(`
     type Ramen {
         menu: String
@@ -13,7 +13,7 @@ const schema = buildSchema(`
         address: String
         price: String
         taste: String
-        men-type: String
+        men_type: String
         evaluation: Int
         topping: String
         memo: String
@@ -23,7 +23,7 @@ const schema = buildSchema(`
         RamenAll: [Ramen]
     }
 `);
-console.log("========> HOGE");
+
 const root = {
     RamenAll: () => {
         return data.ramen;
@@ -33,7 +33,7 @@ const root = {
 const app = express();
 
 app.use(express.static(path.join(__dirname + "/dist")));
-console.log("HOGE");
+
 app.use(
     "/graphql",
     graphqlHTTP({
