@@ -3,10 +3,9 @@ const path = require("path");
 const graphqlHTTP = require("express-graphql");
 const { buildSchema } = require("graphql");
 
-const data = ("./data/ramen.json");
+const data = require("./data/ramen.json");
 
 const schema = buildSchema(`
-
     type Ramen {
         menu: String
         picture: String
@@ -24,7 +23,7 @@ const schema = buildSchema(`
         RamenAll: [Ramen]
     }
 `);
-
+console.log("========> HOGE");
 const root = {
     RamenAll: () => {
         return data.ramen;
@@ -34,7 +33,7 @@ const root = {
 const app = express();
 
 app.use(express.static(path.join(__dirname + "/dist")));
-
+console.log("HOGE");
 app.use(
     "/graphql",
     graphqlHTTP({
@@ -44,12 +43,15 @@ app.use(
     })
 );
 
+app.use("/api", (req, res) => {
+    res.send("Hello World");
+});
+
 const port = process.env.PORT || 4000;
 
 app.listen(port, function() {
     console.log("App listening on " + port + "!");
 });
 
-app.use("/api", (req, res) => {
-    res.send("Hello World");
-});
+
+
