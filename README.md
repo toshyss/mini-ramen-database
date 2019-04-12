@@ -1,5 +1,7 @@
 # mini-ramen-database
 
+* Now under construction.
+
 ## Project setup
 ```
 yarn install

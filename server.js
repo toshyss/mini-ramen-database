@@ -21,12 +21,16 @@ const schema = buildSchema(`
 
     type Query {
         RamenAll: [Ramen]
+        RamenOne(menu: String): Ramen
     }
 `);
 
 const root = {
     RamenAll: () => {
         return data.ramen;
+    },
+    RamenOne: (request) => {
+        return data.ramen.find((ramen) => ramen.menu === request.menu);
     }
 }
 
