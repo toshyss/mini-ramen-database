@@ -50,12 +50,17 @@ const root = {
         return data.ramen.find((ramen) => ramen.menu === request.menu);
     },
     ModifyRamen: (request) => {
-        // let ramen;
-        // if(typeof request.manu !== "undefined") {
-        //     data.ramen.find((ramen))
-        // }
+        if(typeof request.menu !== "undefined") {
+            for(let i = 0; i < data.ramen.length; i++) {
+                if(data.ramen[i].menu === request.menu){
+                    data.ramen[i] = request.input;
+                }
+            }
+        }
         return data.ramen;
     }
+    // AddRamen
+    // DeleteRamen
 }
 
 const app = express();

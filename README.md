@@ -43,6 +43,8 @@ create table ramen (id int primary key default nextval('ramen_id_seq'), name var
 
 ### How to test using mock data(JSON)
 * Open GraphiQL
+
+* select all
 ```
 query {
     RamenAll {
@@ -57,5 +59,52 @@ query {
         topping,
         memo
     }
+}
+```
+
+* select one by menu
+```
+query{
+	RamenOne(menu: "Tyukara-Tantanmen") {
+    menu,
+    picture,
+    shop,
+    address,
+    price,
+    taste,
+    men_type,
+    evaluation,
+    topping,
+    memo
+  }
+}
+```
+
+* update (change picture and evaluation)
+```
+mutation{
+	ModifyRamen(menu: "Tyukara-Tantanmen", input: {
+        menu: "Tyukara-Tantanmen",
+        picture: "0003.jpg",
+        shop: "Ramen-Dammy",
+        address: "Ookayama",
+        price: "800",
+        taste: "Goma",
+        men_type: "Hoso-Men",
+        evaluation: 4,
+        topping: "Egg, Sesami-Paste",
+        memo: "Totemo Suki Desu."
+      }) {
+    menu,
+    picture,
+    shop,
+    address,
+    price,
+    taste,
+    men_type,
+    evaluation,
+    topping,
+    memo
+  }
 }
 ```
