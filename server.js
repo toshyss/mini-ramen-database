@@ -19,6 +19,23 @@ const schema = buildSchema(`
         memo: String
     }
 
+    input RamenInput {
+        menu: String
+        picture: String
+        shop: String
+        address: String
+        price: String
+        taste: String
+        men_type: String
+        evaluation: Int
+        topping: String
+        memo: String
+    }
+
+    type Mutation {
+        ModifyRamen(menu: String!, input: RamenInput): [Ramen]
+    }
+
     type Query {
         RamenAll: [Ramen]
         RamenOne(menu: String): Ramen
@@ -31,6 +48,13 @@ const root = {
     },
     RamenOne: (request) => {
         return data.ramen.find((ramen) => ramen.menu === request.menu);
+    },
+    ModifyRamen: (request) => {
+        // let ramen;
+        // if(typeof request.manu !== "undefined") {
+        //     data.ramen.find((ramen))
+        // }
+        return data.ramen;
     }
 }
 
